@@ -2,6 +2,7 @@
 ### 一、环境配置
 ####  1、使用配置好的conda环境
 下载环境：https://pan.baidu.com/s/1YWSuoMlPPF8O6JXnHiNSLQ?pwd=mdvs -> 解压环境 -> 激活conda: activate openmmlab
+
 打包conda环境（该指令打包时候用，配置时不需要！！！） conda pack -n openmmlab -o openmmlab.tar.gz --ignore-editable-packages
 
 #### 2、按照官网配置
