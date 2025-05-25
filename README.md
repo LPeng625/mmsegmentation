@@ -12,10 +12,13 @@
 #####  配置1：configs/birenet/birenet_fcn_1xb4-306k_cityscapes-256x512.py
 调整输入图片尺寸
 crop_size = (512, 512)
+
 原配置是4卡，改成单卡eta_min需要设置为原来的1/4
 eta_min=1e-4 / 4,
+
 原配置是4卡，改成单卡lr需要设置为原来的1/4
 optimizer = dict(type='SGD', lr=0.05 / 4, momentum=0.9, weight_decay=0.0005)
+
 添加mDice和mFscore指标
 val_evaluator = dict(type='IoUMetric', iou_metrics=['mIoU', 'mDice', 'mFscore'], output_dir='work_dir/birenet/format_results')
 test_evaluator = val_evaluator
