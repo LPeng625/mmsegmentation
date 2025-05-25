@@ -167,10 +167,10 @@ visualization=dict(type='SegVisualizationHook', draw=True, interval=815))
 脚本一：
 ```
 tools/visualization/visualization.py
-```
+
 特征图存储路径eg：
 tools/visualization/work_dirs/vis_data/vis_image/out_file_cityscapes_0.png
-
+```
 
 脚本二：
 ```
