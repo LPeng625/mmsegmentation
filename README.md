@@ -1,23 +1,28 @@
 ## 运行步骤
 ### 一、环境配置
 ####  1、使用配置好的conda环境
-下载环境：https://pan.baidu.com/s/1YWSuoMlPPF8O6JXnHiNSLQ?pwd=mdvs -> 解压环境 -> 激活conda: activate openmmlab
+下载环境：https://pan.baidu.com/s/1YWSuoMlPPF8O6JXnHiNSLQ?pwd=mdvs -> 解压环境 -> 激活 conda: activate openmmlab
 
-打包conda环境（该指令打包时候用，配置时不需要！！！） ``` conda pack -n openmmlab -o openmmlab.tar.gz --ignore-editable-packages ```
+打包conda环境（该指令打包时候用，配置时不需要！！！）
+``` conda pack -n openmmlab -o openmmlab.tar.gz --ignore-editable-packages ```
 
 #### 2、按照官网配置
 
 ### 二、基础配置
 #### 1、基础配置更改
 #####  配置1：configs/birenet/birenet_fcn_1xb4-306k_cityscapes-256x512.py
+
 调整输入图片尺寸
-crop_size = (512, 512)
+
+``` crop_size = (512, 512) ```
 
 原配置是4卡，改成单卡eta_min需要设置为原来的1/4
-eta_min=1e-4 / 4,
+
+``` eta_min=1e-4 / 4, ```
 
 原配置是4卡，改成单卡lr需要设置为原来的1/4
-optimizer = dict(type='SGD', lr=0.05 / 4, momentum=0.9, weight_decay=0.0005)
+
+``` optimizer = dict(type='SGD', lr=0.05 / 4, momentum=0.9, weight_decay=0.0005) ```
 
 添加mDice和mFscore指标
 
