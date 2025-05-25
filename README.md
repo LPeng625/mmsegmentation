@@ -1,3 +1,5 @@
+## 详细配置步骤见workdoc
+
 <div align="center">
   <img src="resources/mmseg-logo.png" width="600"/>
   <div>&nbsp;</div>
