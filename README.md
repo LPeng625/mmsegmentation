@@ -184,3 +184,6 @@ tools/visualization/test.pth \
 mmsegmentation/mmsegmentation/vis_data/wandb/run-20230511_151617-mb9txy83/files/media/images
 
 ```
+
+## Acknowledgments
+We thank the authors of https://github.com/open-mmlab/mmsegmentation for open-source code.
