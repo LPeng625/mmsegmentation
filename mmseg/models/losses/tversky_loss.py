@@ -103,7 +103,8 @@ class TverskyLoss(nn.Module):
             class_weight = pred.new_tensor(self.class_weight)
         else:
             class_weight = None
-
+        # TODO 添加sigmoid效果更好
+        pred = F.sigmoid(pred)
         pred = F.softmax(pred, dim=1)
         num_classes = pred.shape[1]
         one_hot_target = F.one_hot(
