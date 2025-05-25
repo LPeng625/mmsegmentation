@@ -4,6 +4,7 @@
 下载环境：https://pan.baidu.com/s/1YWSuoMlPPF8O6JXnHiNSLQ?pwd=mdvs -> 解压环境 -> 激活 conda: activate openmmlab
 
 打包conda环境（该指令打包时候用，配置时不需要！！！）
+
 ``` conda pack -n openmmlab -o openmmlab.tar.gz --ignore-editable-packages ```
 
 #### 2、按照官网配置
@@ -26,8 +27,9 @@
 
 添加mDice和mFscore指标
 
-val_evaluator = dict(type='IoUMetric', iou_metrics=['mIoU', 'mDice', 'mFscore'], output_dir='work_dir/birenet/format_results')
-test_evaluator = val_evaluator
+``` val_evaluator = dict(type='IoUMetric', iou_metrics=['mIoU', 'mDice', 'mFscore'], output_dir='work_dir/birenet/format_results')
+
+test_evaluator = val_evaluator ```
 
 ##### 配置2：configs/_base_/models/birenet.py
 norm_cfg = dict(type='BN', requires_grad=True) #TODO SyncBN->BN
