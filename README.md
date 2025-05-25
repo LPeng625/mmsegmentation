@@ -20,6 +20,7 @@ eta_min=1e-4 / 4,
 optimizer = dict(type='SGD', lr=0.05 / 4, momentum=0.9, weight_decay=0.0005)
 
 添加mDice和mFscore指标
+
 val_evaluator = dict(type='IoUMetric', iou_metrics=['mIoU', 'mDice', 'mFscore'], output_dir='work_dir/birenet/format_results')
 test_evaluator = val_evaluator
 
@@ -57,10 +58,10 @@ visualization=dict(type='SegVisualizationHook', draw=True, interval=815))
 
 #### 2、更改类别及后缀
 mmseg/datasets/cityscapes.py
-更改类别
+更改类别：
 CLASSES = ('background','road')
 PALETTE = [[0, 0, 0], [255, 255, 255]]
-更改后缀
+更改后缀：
 img_suffix='.png',
 seg_map_suffix='_road.png',
 
@@ -108,9 +109,9 @@ vis_backends=[dict(type='LocalVisBackend'),
               dict(type='WandbVisBackend')]
 
 ##### 配置2：configs/_base_/schedules/schedule_160k.py
-# TODO 测试/验证期间结果可视化
-# 特征图存储路径eg：work_dir/birenet/20230511_150800/vis_data/vis_image
-# wandb特征图存储路径eg：work_dir/birenet/20230511_150800/vis_data/wandb/run-20230511_150804-9z6vfqe3/files/media/images
+测试/验证期间结果可视化
+特征图存储路径eg：work_dir/birenet/20230511_150800/vis_data/vis_image
+wandb特征图存储路径eg：work_dir/birenet/20230511_150800/vis_data/wandb/run-20230511_150804-9z6vfqe3/files/media/images
 visualization=dict(type='SegVisualizationHook', draw=True, interval=815))
 
 
